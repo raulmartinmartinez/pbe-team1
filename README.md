@@ -26,12 +26,19 @@ Repositorio del equipo 1 de PBE. Aquí se recoge la documentación técnica del 
 
 ## 🏗️ Arquitectura
 
+**Task 1 — Red LoRaWAN**
+
+![Arquitectura de red LoRaWAN](docs/img/arquitectura-lorawan.png)
+
 ```mermaid
 flowchart LR
-    S[🌡️ Sensor] -- BLE --> G[📶 Gateway] --> V[🖥️ Servidor]
+    ED["📟 Arduino MKR WAN 1310"] -- "LoRaWAN · EU868" --> GW["📶 The Things Indoor Gateway"]
+    GW -- "Wi-Fi / Internet" --> TTS["☁️ The Things Stack"]
+    TTS -- "MQTT / HTTP" --> APP["📈 Plataforma externa"]
+    TTS -. "Downlink" .-> ED
 ```
 
-Más detalle en [`docs/arquitectura.md`](docs/arquitectura.md).
+Detalle de cada bloque en [`docs/arquitectura.md`](docs/arquitectura.md).
 
 ## 📂 Estructura del repositorio
 
@@ -39,9 +46,8 @@ Más detalle en [`docs/arquitectura.md`](docs/arquitectura.md).
 pbe-team1/
 ├── Progress Reports/     # Presentaciones de seguimiento (.pptx)
 ├── docs/                 # Documentación técnica
-│   ├── arquitectura.md
-│   ├── ble.md
-│   └── materiales.md
+│   ├── img/              # Diagramas e imágenes
+│   └── arquitectura.md
 └── README.md
 ```
 
@@ -49,9 +55,7 @@ pbe-team1/
 
 | Documento | Contenido |
 |-----------|-----------|
-| [Arquitectura](docs/arquitectura.md) | Esquema general del sistema |
-| [Bluetooth / BLE](docs/ble.md) | Evaluación de la tecnología de comunicación |
-| [Materiales](docs/materiales.md) | Lista de materiales y costes |
+| [Arquitectura](docs/arquitectura.md) | Arquitectura de red LoRaWAN (Task 1) |
 
 ## 📊 Progress Reports
 
