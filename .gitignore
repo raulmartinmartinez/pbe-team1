@@ -1,0 +1,14 @@
+# Claves y credenciales: NUNCA al repositorio
+arduino_secrets.h
+.env
+*.env
+
+# Entornos y basura de Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Sistema
+.DS_Store
+Thumbs.db
