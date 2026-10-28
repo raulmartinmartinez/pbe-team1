@@ -1,0 +1,34 @@
+LogsOutline - PBE Team 1 - B1 LoRaWAN
+Horas en hora local (CEST). Los JSON de TTS usan UTC (local = UTC + 2 h hasta el 25/10/2026).
+
+[2026-10-21] Uplink (T01-T03) y primer downlink (T04)
+  Inicio: 09:45 (join)   Fin: 10:18
+  Dispositivo: pbe-team1-arduino (DevAddr 26 0B C9 74)   Gateway propio: gateway-team1
+  Archivos:
+    logs/2026-10-21_uplink_downlink/serial_T01-T04.txt
+      Monitor Serie del Arduino, mensajes T01, T02-hola, T03-abcdefgh, T04 (sin marcas de tiempo)
+    JSON de TTS: no exportados; evidencia en capturas del PPT
+  Pruebas:
+    09:48  T01           3 B   SF12  867,3 MHz  airtime 1,319 s  recibido (3 gateways)
+    09:54  T02-hola      8 B   SF8   868,3 MHz  airtime 0,113 s  recibido (3 gateways)
+    09:58  T03-abcdefgh  12 B  SF7   867,9 MHz  airtime 0,067 s  recibido (3 gateways)
+    10:12  Downlink 01 02 03 (FPort 1) puesto en cola en TTS
+    10:14  T04           3 B   SF7                               recibido; downlink transmitido por gateway-team1
+  Resultado: 4/4 uplinks recibidos. Downlink transmitido (gs.down.send, SF7, 867,5 MHz)
+             pero no mostrado en el Monitor Serie ("No downlink message received").
+
+[2026-10-28] Downlink recibido en el Arduino (Task 10)
+  Inicio: 08:59 (join)   Fin: 09:39
+  Dispositivo: pbe-team1-arduino (DevAddr 26 0B C4 57)   Gateway: gateway-team1
+  Sketch: LoraSendAndReceive_PBE.ino con espera de downlink de hasta 10 s
+  Archivos:
+    logs/2026-10-28_downlink/serial_2026-10-28_downlink_bytes.txt    -> Monitor Serie, prueba T05
+    logs/2026-10-28_downlink/serial_2026-10-28_downlink_decoded.txt  -> Monitor Serie con hora, T05 y T06
+    logs/2026-10-28_downlink/app_2026-10-28_downlink_decoded.json    -> Live data del dispositivo
+    logs/2026-10-28_downlink/gateway_2026-10-28_downlink_decoded.json -> Live data de gateway-team1
+  Pruebas:
+    09:00  Downlink 01 02 03 (FPort 1) en cola
+    09:02  T05  SF12  -> downlink enviado a 868,5 MHz (SF12) -> Arduino: Received: 01 02 03
+    09:36  Downlink 01 02 01 78 en cola, decodificado por el formatter (GOOD, 100, 1, 120)
+    09:38  T06  SF8   -> downlink enviado a 868,1 MHz (SF8)  -> Arduino: Received: 01 02 01 78
+  Resultado: downlink verificado de punta a punta. Nota: el reloj del PC va ~10 s por delante de TTS.
