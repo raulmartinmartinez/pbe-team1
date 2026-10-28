@@ -1,0 +1,21 @@
+PBE Team 1 - Log del Monitor Serie
+Fecha: 28/10/2026
+Prueba: Downlink con bytes 01 02 03 (FPort 1), Task 10
+Sketch: LoraSendAndReceive_PBE.ino con espera de downlink de hasta 10 s
+Dispositivo: pbe-team1-arduino, DevAddr 26 0B C4 57 (join a las 08:59)
+Downlink puesto en cola en TTS: 09:00:45 | T05 enviado: 09:02:30 (SF12)
+Resultado: Received: 01 02 03 -> downlink recibido correctamente
+------------------------------------------------------------
+
+Your module version is: ARD-078 1.2.3
+Your device EUI is: a8610a3539227306
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
+
+Sending: T05 - 54 30 35 
+Message sent correctly!
+Received: 01 02 03 
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
