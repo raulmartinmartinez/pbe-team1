@@ -1,0 +1,40 @@
+Welcome to MKR WAN 1300/1310 first configuration sketch
+Register to your favourite LoRa network and we are ready to go!
+Your module version is: ARD-078 1.2.3
+Please make sure that the latest modem firmware is installed.
+To update the firmware upload the 'MKRWANFWUpdate_standalone.ino' sketch.
+Your device EUI is: a8610a3539227306
+Are you connecting via OTAA (1) or ABP (2)?
+Your module version is: ARD-078 1.2.3
+Your device EUI is: a8610a3539227306
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
+
+Sending: T01 - 54 30 31 
+Message sent correctly!
+No downlink message received at this time.
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
+
+Sending: T02-hola - 54 30 32 2D 68 6F 6C 61 
+Message sent correctly!
+No downlink message received at this time.
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
+
+Sending: T03-abcdefgh - 54 30 33 2D 61 62 63 64 65 66 67 68 
+Message sent correctly!
+No downlink message received at this time.
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
+
+Sending: T04 - 54 30 34 
+Message sent correctly!
+No downlink message received at this time.
+
+Enter a message to send to network
+(make sure that end-of-line 'NL' is enabled)
